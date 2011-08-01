@@ -1,6 +1,7 @@
 describe('horseman', function() {
+  var horseman;
   beforeEach(function() {
-    require('horseman');
+    horseman = require('horseman');
   });
 
   it('creates a user agent', function() {
@@ -14,5 +15,9 @@ describe('horseman', function() {
   it('creates a fake history', function() {
     window.history.pushState({}, '', 'foo/bar.html');
     expect(window.location.pathname).toEqual('foo/bar.html');
+  });
+
+  it('tries to load JQuery', function() {
+    expect(horseman.requireJQuery).toBeDefined();
   });
 });
