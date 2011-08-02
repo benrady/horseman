@@ -22,9 +22,13 @@ describe('horseman', function() {
     expect(window.document.getElementById('content').innerHTML).toEqual('content');
   });
 
-  it('tries to load JQuery', function() {
-    horseman.useJQuery('jquery-1.6.2.js');
+  it('autoloads files or functions', function() {
+    horseman.autoReload('jquery-1.6.2.js', function() {
+      global.wasCalled = true;
+    });
+    horseman.buildWindow();
     horseman.buildWindow();
     expect(window.$).toBeDefined();
+    expect(global.wasCalled).toEqual(true);
   });
 });
