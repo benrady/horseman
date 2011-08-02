@@ -17,7 +17,14 @@ describe('horseman', function() {
     expect(window.location.pathname).toEqual('foo/bar.html');
   });
 
+  it('can load markup from a file', function() {
+    horseman.buildWindow('markup/index.html')
+    expect(window.document.getElementById('content').innerHTML).toEqual('content');
+  });
+
   it('tries to load JQuery', function() {
-    expect(horseman.requireJQuery).toBeDefined();
+    horseman.useJQuery('jquery-1.6.2.js');
+    horseman.buildWindow();
+    expect(window.$).toBeDefined();
   });
 });
