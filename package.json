@@ -2,7 +2,7 @@
   "author": "Ben Rady <benrady@gmail.com> (http://benrady.com)",
   "name": "horseman",
   "description": "A headless browser environment for unit testing",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "homepage": "http://github.com/benrady/horseman",
   "repository": {
     "type": "git",
